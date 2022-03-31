@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body  >
+
+
+    <h2>Patients List of the Hospital</h2>
+
+    <table class="table table_striped" style="border: 1; background-color: honeydew;">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Date of Birth</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+                <th>Address</th>
+                <th>Photo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <td>{{patient.id}}</td>
+                <td>{{patient.patientName}}</td>
+                <td>{{patient.pgender}}</td>
+                <td>{{patient.page}}</td>
+                <td>{{patient.dob}}</td>
+                <td>0{{patient.phoneNumber}}</td>
+                <td>{{patient.emailId}}</td>
+                <td>{{patient.paddress}}</td>
+                <td ><img src="url" (change)="selectFile($event)" width="50" height="50" alt=""></td>
+                <td>
+                   <button (click)="updatePatient(patient.id)" class="btn btn-info">Update</button>
+                    <button (click)="deletePatient(patient.id)" class="btn btn-danger" style="margin-left: 10px;">Delete</button> 
+                    <button (click)="patientDetails(patient.id)" class="btn btn-info" style="margin-left: 10px;">View</button> 
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>
